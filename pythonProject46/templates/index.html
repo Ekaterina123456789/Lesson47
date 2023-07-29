@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+<h2>Новые технологии</h2>
+<h4><textarea name="message" cols="50" rows="3">Занимая лидирующие позиции в сфере разработок смазочных материалов, мы не можем отставать в области работы с нашими уважаемыми клиентами.</textarea></h4>
+<h4><textarea name="message" cols="50" rows="5">Новые разработки в области it и программирования приходят вам на помощь, чтобы сделать пользование нашими порталами максимально удобным, современным и информативным. Для этих целей был разработан данный сайт на современном движке с многими возможностями.</textarea></h4>
+<h3>
+    Преимущества Eurol
+</h3>
+<div wight="160px">
+<img width="1100px" src="{{ url_for('static', filename='images/index.jpg') }}" alt="преимущества">
+</div>
+<div>
+<img width="275px" src="{{ url_for('static', filename='images/E100112-5L.png') }}" alt="масло 5л">
+<img width="275px" src="{{ url_for('static', filename='images/E108839-20L-1.png') }}" alt="масло 20л">
+<img width="275px" src="{{ url_for('static', filename='images/E105820-60L.png') }}" alt="масло 60л">
+<img width="275px" src="{{ url_for('static', filename='images/E118855-210L.png') }}" alt="масло 210л">
+</div>
+<h2> Качество - это наша суть</h2>
+<div wight="120">
+<h3> Доказательством качества наших смазочных материалов являются победы наших спортивных команд.</h3>
+<h3> Rock’n’Roll Racing Team — это наша гордость, команда профессиональных автогонщиков, <br>сражающихся в дисциплине трофи-рейдов, с 2020 года выступающие на смазочных материалах Eurol.</h3>
+</div>
+<hr>
+<h2>Отзывы клиентов</h2>
+<ul>
+    {% for post in posts %}
+    <li>
+        <p class="title">
+            <a href="{{ url_for('show_post', post_id=post.url) }}">{{ post.title }}</a>
+        </p>
+        <div class="announce">{{ post.text[:242] | striptags }}...</div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

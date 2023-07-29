@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+
+<form action="/add_product" method="post" class="form-contact">
+  <p>Название товара: <input type="text" name="title" required></p>
+  <p>Фото товара: <input type="text" name="photo" required></p>
+  <p>Цена: <input type="text" name="price" required></p>
+  <p><input type="submit" value="Добавить товар"></p>
+</form>
+{% endblock %}

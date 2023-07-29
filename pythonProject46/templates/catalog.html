@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+<div class="catalog_wrapper">
+    {% for product in products %}
+    <div class="catalog">
+        <p><a href="{{ url_for('show_product', product_id=product.id) }}">{{ product.title }}</a></p>
+        <img src="{{ product.photo }}" alt="{{ product.title }}">
+        <p>Цена: {{ product.price }} руб.</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

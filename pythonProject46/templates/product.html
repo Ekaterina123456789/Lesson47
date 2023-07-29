@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+<div class="product">
+<img src="{{ photo }}" alt="{{ title }}">
+цена: {{ price }} руб.
+</div>
+{% endblock %}

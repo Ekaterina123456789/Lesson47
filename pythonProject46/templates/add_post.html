@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+
+<form action="/add_post" method="post" class="form-contact">
+  <p>Ваше имя: <input type="text" name="title" required></p>
+  <p>Ссылка на соцсети: <input type="text" name="url" required></p>
+  <p>Текст отзыва: </p>
+  <p><textarea name="text" cols="40" rows="10"></textarea></p>
+  <p><input type="submit" value="Добавить отзыв"></p>
+</form>
+{% endblock %}
